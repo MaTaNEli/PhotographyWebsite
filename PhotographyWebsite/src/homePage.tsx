@@ -1,11 +1,10 @@
-import data from "./Utils/Movie";
 import Card from "./UI/Card";
 import axios, { AxiosError } from "axios";
 import { useState, useEffect } from "react";
 
 const HomePage = () => {
-  const [movies,setMovies] = useState();
-  const [error, SetError] = useState("")
+  const [movies,setMovies] = useState(Array<object>);
+  
 
   useEffect(() => {
     (async () => {
@@ -14,33 +13,25 @@ const HomePage = () => {
 
         console.log(1)
         if (res.status == 200) {
-          setMovies(res.data)
-         
+          setMovies(res.data.results)       
         }
       } catch (error) {
-        const err = error as AxiosError;
-        SetError(err.message)
+        console.log(error)
       }
-      
     })();
   }, [])
- 
-  // (async () => {
-  //   const res = await axios.get('http://localhost:3000/');
-
-  //   if (res.status == 200) {
-  //     setMovies(res.data)
-  //     console.log(movies)
-  //   }
-  // })()
 
   return ( movies ? 
   <div>
-    {data.map((movie,key) => (
-      <Card  movie={movie} key={key} id={key}/>        
+    {movies.map((movie) =>(
+      <Card  movie={movie} key={movie['id']}/>        
     ))}
-  </div> : {error}
+  </div> : <div></div>
   )
 }
 
 export default HomePage;
+
+// {movies["results"].map((movie: object) => (
+//   <Card  movie={movie} key={movie.id}/>        
+// ))}

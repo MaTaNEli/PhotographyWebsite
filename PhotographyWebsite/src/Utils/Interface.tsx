@@ -1,26 +1,17 @@
-interface movie {
-  "Title"?: string;
-  "Year"?: string;
-  "Rated"?: string;
-  "Released"?: string;
-  "Runtime": string;
-  "Genre": string;
-  "Director": string;
-  "Writer": string;
-  "Actors": string;
-  "Plot": string;
-  "Language": string;
-  "Country": string;
-  "Awards": string;
-  "Poster": string;
-  "Metascore": string;
-  "imdbRating": string;
-  "imdbVotes": string;
-  "imdbID": string;
-  "Type": string;
-  "Response"?: string;
-  "Images"?: Array<string>;
-  "totalSeasons"?: string
+interface movArr {
+  "adult": boolean,
+  "backdrop_path": string,
+  "genre_ids": Array<number>,
+  "id": number,
+  "original_language": string,
+  "original_title": string,
+  "overview": string,
+  "popularity": number,
+  "poster_path": string,
+  "release_date": string,
+  "title":string,
+  "video": false,
+  "vote_average": number,
+  "vote_count": number
 }
-
-export default movie;
+export default movArr;

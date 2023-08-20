@@ -1,17 +1,14 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, } from "react";
 import movie from "../Utils/Interface";
 import Movie from "./Movie";
 
-interface MyClassName {
-  movie: movie,
-  id: number
-}
 
-const Card = (props: PropsWithChildren<MyClassName>) => {
+
+const Card = (props: PropsWithChildren<movie>) => {
   const cartStyle = {
     width: '400px', 
     height: '200px', 
-    backgroundImage: `url('${props.movie["Images"] ? props.movie["Images"][0] : ""}')`,
+    backgroundImage: `url('${props.movie['backdrop_path'] ? 'https://image.tmdb.org/t/p/w500' + props.movie['backdrop_path'] : ""}')`,
     backgroundsize: 'cover',
     backgroundposition: 'center',
     borderRadius: '8px',
@@ -20,8 +17,10 @@ const Card = (props: PropsWithChildren<MyClassName>) => {
   }
   return (
     <div style={cartStyle}>
-      <Movie id={props.id} movie={props.movie}/>
+      <Movie movie={props.movie}/>
     </div>)
 };
 
 export default Card;
+
+//<Movie id={props.id} movie={props.movie}/>
