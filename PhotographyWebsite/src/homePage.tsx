@@ -31,7 +31,3 @@ const HomePage = () => {
 }
 
 export default HomePage;
-
-// {movies["results"].map((movie: object) => (
-//   <Card  movie={movie} key={movie.id}/>        
-// ))}
