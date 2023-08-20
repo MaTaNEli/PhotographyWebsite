@@ -12,7 +12,6 @@ const MovieDetails = () => {
 
   return movie ?  <div>
     <h2>{movie.Title}</h2>
-    <img src={movie.Images[0]} alt={movie.Title} width="800" />
     <h4>Year: {movie.Year}</h4>
     <h4>Actors: {movie.Actors}</h4>
     <h4>Country: {movie.Country}</h4>
