@@ -1,26 +1,29 @@
-import { PropsWithChildren, } from "react";
-import movie from "../Utils/Interface";
-import Movie from "./Movie";
+import {movie} from "../Utils/Interface";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import './Card.css'
 
+interface Props {
+  movie: movie; 
+}
 
+const Card = (props: Props) => {
+  const [imageSrc, setImageSrc] = useState("");
 
-const Card = (props: PropsWithChildren<movie>) => {
-  const cartStyle = {
-    width: '400px', 
-    height: '200px', 
-    backgroundImage: `url('${props.movie['backdrop_path'] ? 'https://image.tmdb.org/t/p/w500' + props.movie['backdrop_path'] : ""}')`,
-    backgroundsize: 'cover',
-    backgroundposition: 'center',
-    borderRadius: '8px',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+  useEffect(() => {
+    return () => {
+      props.movie['backdrop_path'] ? setImageSrc(import.meta.env.VITE_APP_IMG + props.movie['backdrop_path']) : "";
+    };
+  }, [props.movie]);
 
-  }
-  return (
-    <div style={cartStyle}>
-      <Movie movie={props.movie}/>
-    </div>)
+  return (imageSrc ? 
+    <div>
+      <Link className="concept" to={`/details/${props.movie.id}`}>    
+        <img src={imageSrc} alt="My Image" ></img>
+          <h2 className="text-overlay">{props.movie['original_title']}</h2>
+          <p className="text-overlay">Release Date: {props.movie['release_date']}</p>   
+      </Link>
+    </div> : null)
 };
 
 export default Card;
-
-//<Movie id={props.id} movie={props.movie}/>

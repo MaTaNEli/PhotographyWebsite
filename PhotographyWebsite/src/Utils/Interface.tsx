@@ -1,4 +1,4 @@
-interface movArr {
+export interface movie {
   "adult": boolean,
   "backdrop_path": string,
   "genre_ids": Array<number>,
@@ -14,4 +14,3 @@ interface movArr {
   "vote_average": number,
   "vote_count": number
 }
-export default movArr;

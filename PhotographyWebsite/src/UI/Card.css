@@ -1,0 +1,40 @@
+.concept {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 30px;
+  box-shadow: 0 2px 20px rgba(234, 78, 240, 0.2);
+  margin-bottom: 1rem;
+  max-width: 1280px;
+  padding: 5px;
+}
+
+.concept:hover {
+  transform: translateY(-5px);
+  transition: transform 0.2s;
+  box-shadow: 0 2px 30px rgba(234, 78, 240, 0.4);
+}
+
+.concept img {
+  box-shadow: 0 0 8px 8px white inset;
+  border-radius: 30px;
+  object-fit: contain;
+}
+
+.concept h2 {
+  margin: flex;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.concept p {
+  position: relative;
+  text-align: flex;
+}
+
+.text-overlay {
+  position: fixed;
+  color: white; /* Text color */
+  font-size: 20px; /* Font size */
+}
