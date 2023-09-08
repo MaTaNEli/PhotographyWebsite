@@ -1,4 +1,4 @@
-import {movie} from "../Utils/Interface";
+import {movie} from "../../Utils/Interface";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import './Card.css'

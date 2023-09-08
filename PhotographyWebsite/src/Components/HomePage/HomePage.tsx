@@ -1,6 +1,6 @@
 import Card from "../UI/Card";
 import axios from "axios";
-import {movie} from "../Utils/Interface";
+import {movie} from "../../Utils/Interface";
 import { useState, useEffect } from "react";
 
 const HomePage = () => {
@@ -11,7 +11,7 @@ const HomePage = () => {
     (async () => {
       try{
         const res = await axios.get('/');
-        console.log(res.status)
+
         if (res.status == 200) {
           setMovies(res.data.results)       
         }

@@ -1,7 +1,15 @@
-.text {
-  padding: 2rem;
-  text-align: center;
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+}
+
+.home, .report, .product {
   display: flex;
-  color: white; /* Text color */
-  font-size: 40px; /* Font size */
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
 }

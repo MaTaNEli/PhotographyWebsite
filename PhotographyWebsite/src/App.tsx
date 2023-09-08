@@ -1,10 +1,10 @@
 import './App.css'
-
 import axios from "axios";
 
-import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from './HomePage/HomePage';
-import MovieDetails from './Detailes/MovieDetails';
+import SideMenu from './Components/Menu/SideMenu';
+import HomePage from './Components/HomePage/HomePage';
+import MovieDetails from './Components/Detailes/MovieDetails';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 axios.defaults.baseURL = import.meta.env.VITE_APP_API_KEY;
 axios.defaults.withCredentials = true
@@ -14,9 +14,7 @@ function App() {
   return (
     <div>  
       <BrowserRouter>
-        <header>
-          <Link className='text' to="/">Home Page</Link>
-        </header>
+          <SideMenu />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/details/:id" element={<MovieDetails />} />
