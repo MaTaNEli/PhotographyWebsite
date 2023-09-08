@@ -1,9 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, Navigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import './MovieDetails.css'
-
-
 
 const MovieDetails = () => {
   const navigate = useNavigate();
