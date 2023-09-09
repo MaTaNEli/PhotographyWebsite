@@ -1,17 +1,22 @@
 .root {
+  position: relative;
   align-items: center;
   justify-content: center;
+  max-width: 750px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 10%);
 }
 
 img {
-  display: block;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
-  
   box-shadow: 0 0 8px 8px white inset;
   border-radius: 30px;
   object-fit: contain;
-  
+  width: 95%;
+  height: 95%;
 }
 
 .text {
@@ -23,7 +28,10 @@ img {
   height: 60px;
 }
 
-.button {
+.root button {
+  bottom: -100%;
+  left: 45%;
+  position: absolute;
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   display: flex;
@@ -31,4 +39,10 @@ img {
   margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
+  padding: 0.5rem;
+}
+
+button:hover {
+  background-color: #e20d0d;
+  border-color: #e20d0d;
 }

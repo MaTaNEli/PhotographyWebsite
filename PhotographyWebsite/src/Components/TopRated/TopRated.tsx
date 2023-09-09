@@ -3,14 +3,14 @@ import axios from "axios";
 import {movieInterFace} from "../../Utils/Interface";
 import { useState, useEffect } from "react";
 
-const HomePage = () => {
+const TopRated = () => {
   const [movies, setMovies] = useState(Array<movieInterFace>);
   //const [verified, setVerified] = useState()
 
   useEffect(() => {
     (async () => {
       try{
-        const res = await axios.get('/');
+        const res = await axios.get('/topRated');
 
         if (res.status == 200) {
           setMovies(res.data.results)       
@@ -35,4 +35,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage;
+export default TopRated;

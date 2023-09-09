@@ -10,8 +10,8 @@ export const SideBarData = [
     className: 'nav-text'
   },
   {
-    title: 'Movies',
-    path: '#',
+    title: 'Top Rated Movies',
+    path: '/topRated',
     icon: <AiIcons.AiOutlinePlayCircle/>,
     className: 'nav-text'
   },

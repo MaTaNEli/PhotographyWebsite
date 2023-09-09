@@ -1,10 +1,10 @@
-import {movie} from "../../Utils/Interface";
+import {movieInterFace} from "../../Utils/Interface";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import './Card.css'
 
 interface Props {
-  movie: movie; 
+  movie: movieInterFace; 
 }
 
 const Card = (props: Props) => {

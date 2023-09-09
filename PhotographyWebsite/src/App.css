@@ -1,15 +1,15 @@
 * {
   box-sizing: border-box;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Bowlby One SC', cursive;
   padding: 0;
   margin: 0;
   background-color: black;
 }
 
-.home, .report, .product {
+/* .home, .report, .product {
   display: flex;
   height: 90vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-}
+} */

@@ -4,6 +4,13 @@
   display: flex;
   justify-content: start;
   align-items: center;
+  z-index: 1000;
+}
+
+.drop_down {
+  background-color: rgb(56, 7, 7);
+  position:absolute;
+  z-index: 1000;
 }
 
 .menu-bars {
@@ -69,4 +76,15 @@
 
 span {
   margin-left: 16px;
+}
+
+h1 {
+  background-color: rgb(56, 7, 7);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
 }
