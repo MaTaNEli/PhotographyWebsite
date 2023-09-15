@@ -1,0 +1,42 @@
+.myForm {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  max-width: 750px;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10rem;
+  background-color: rgb(8, 5, 1);
+  
+}
+
+.myForm input{
+  background-color: aqua;
+  padding: 5px;
+  border-radius: 30px;
+  color:black
+}
+
+.myForm button {
+  background-color: rgb(160, 146, 197);
+  padding: 5px;
+  border-radius: 30px;
+  color:black
+}
+
+.myForm h4 {
+  background-color: black;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+} 

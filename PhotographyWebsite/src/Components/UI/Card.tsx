@@ -18,7 +18,7 @@ const Card = (props: Props) => {
 
   return (imageSrc ? 
     <div>
-      <Link className="concept" to={`/details/${props.movie.id}`}>    
+      <Link style={{textDecoration: 'none'}} className="concept" to={`/details/${props.movie.id}`}>    
         <img src={imageSrc} alt="My Image" ></img>
           <h2 className="text-overlay">{props.movie['original_title']}</h2>
           <p className="text-overlay">Release Date: {props.movie['release_date']}</p>   
