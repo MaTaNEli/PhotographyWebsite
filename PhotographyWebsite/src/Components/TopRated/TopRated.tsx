@@ -1,5 +1,5 @@
 import Card from "../UI/Card";
-import axios from "axios";
+import {mainServer} from '../../ApiLinks/ApiLink'
 import {movieInterFace} from "../../Utils/Interface";
 import { useState, useEffect } from "react";
 
@@ -10,7 +10,7 @@ const TopRated = () => {
   useEffect(() => {
     (async () => {
       try{
-        const res = await axios.get('/topRated');
+        const res = await mainServer.get('/topRated');
 
         if (res.status == 200) {
           setMovies(res.data.results)       

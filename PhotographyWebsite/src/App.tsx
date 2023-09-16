@@ -1,5 +1,4 @@
 import './App.css'
-import axios from "axios";
 
 import SideMenu from './Components/Menu/SideMenu';
 import HomePage from './Components/HomePage/HomePage';
@@ -8,17 +7,33 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import TopRated from './Components/TopRated/TopRated';
 import LogIn from './Components/LogIn/LogIn';
 import Register from './Components/Register/Register';
-
-axios.defaults.baseURL = import.meta.env.VITE_APP_API_KEY;
-axios.defaults.withCredentials = true
+import { useEffect, useState } from 'react';
+import { mainServer } from './ApiLinks/ApiLink';
 
 function App() {
-const verified = false
+  const [verified, setVerified] = useState(false)
+  const [userName, setUserName] = useState ('')
+  useEffect(() => {
+    (async () => {
+      try{
+        console.log(1)
+        const res = await mainServer.get('/checkValidated');
+
+        if (res.status == 200) {
+          setUserName(res.data)
+          setVerified(true)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    })();
+  }, [])
+
   return (
     <div>  
       <BrowserRouter>
         {verified ? 
-          <SideMenu /> 
+          <SideMenu userName={userName}/> 
           : 
           null}
         <Routes>
@@ -31,7 +46,7 @@ const verified = false
           ) : (
             <>
               <Route path="/register" element={<Register />} />
-              <Route path="/" element={<LogIn />} />
+              <Route path="*" element={<LogIn />} />
             </>
           )}
           

@@ -1,4 +1,4 @@
-import axios from "axios";
+import {mainServer} from '../../ApiLinks/ApiLink'
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import './MovieDetails.css'
@@ -12,7 +12,7 @@ const MovieDetails = () => {
   useEffect(() => {
     (async () => {
       try{
-        const res = await axios.get(`${id}`);
+        const res = await mainServer.get(`${id}`);
         
         if (res.status == 200) {
           setMovie(res.data)  

@@ -1,17 +1,15 @@
 import Card from "../UI/Card";
-import axios from "axios";
+import {mainServer} from '../../ApiLinks/ApiLink' 
 import {movieInterFace} from "../../Utils/Interface";
 import { useState, useEffect } from "react";
 
 const HomePage = () => {
   const [movies, setMovies] = useState(Array<movieInterFace>);
-  //const [verified, setVerified] = useState()
 
   useEffect(() => {
     (async () => {
       try{
-        const res = await axios.get('/');
-
+        const res = await mainServer.get('/');
         if (res.status == 200) {
           setMovies(res.data.results)       
         }

@@ -1,12 +1,15 @@
 import './SideMenu.css';
-import { useState } from "react";
+import { PropsWithChildren, useState } from "react";
 import * as AiIcons from 'react-icons/ai';
 import * as FaIcons from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import { Link } from "react-router-dom";
 import { SideBarData } from "./SideBarData";
 
-const SideMenu = () => {
+interface User {
+  userName:string
+}
+const SideMenu = ((props : PropsWithChildren<User>) => {
   const [sideBarShow, setSideBarShow] = useState(false);
 
   const handleMouseEnter = () => setSideBarShow(!sideBarShow);
@@ -21,7 +24,9 @@ const SideMenu = () => {
               <FaIcons.FaBars onClick={handleMouseEnter}/>
             </Link>
             <h1>What To Watch?</h1>
+            <h3>Hello {props.userName}</h3>
         </div>  
+
         <div  className="drop_down"> 
           <nav className={sideBarShow ? 'nav-menu active' : 'nav-menu'}>
             <ul className="nav-menu-items" onClick={handleMouseEnter}
@@ -47,6 +52,6 @@ const SideMenu = () => {
       </IconContext.Provider>
     </>
   )
-}
+})
 
 export default SideMenu;

@@ -1,27 +1,35 @@
-import axios from "axios";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import '../../Form/Form.css'
+import { LogServer } from "../../ApiLinks/ApiLink";
+import axios, { AxiosError } from "axios";
 
 const LogIn = () => {
   const navigate = useNavigate();
-  //const [errorMessage, setError] = useState('');
+  const [errorMessage, setError] = useState('');
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [fullName, setFullname] = useState('');
 
-  const submit = async e => {
+  const submit = async (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const userDetails = {email, username, fullName, password};
 
     try {
-      const response = await axios.post('register', userDetails);
+      const response = await LogServer.post('register', userDetails);
       console.log(response.data);
       navigate('/');
-    } catch (error) {
-        //setError(error.response?.data.error);
-        console.log(error);
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        const axiosError = error as AxiosError;
+        const responseData = axiosError.response?.data;
+        if (typeof responseData === 'string') {
+          setError(responseData);
+        } else {
+          setError('An unknown error occurred in.');
+        }
+      }
     }
   };
 
@@ -62,12 +70,13 @@ const LogIn = () => {
                   onChange={e => input.onChange(e.target.value)}/>
         </div>
       ))}
+      {errorMessage ? <h5>{errorMessage}</h5> : null}
       <div>
         <button type="submit" disabled={!username || !password} >Sing Up</button>
       </div>
 
-      <h4 color="#4D47C3" className="mt-4">Have an account ?
-        <Link style={{textDecoration: 'none'}} to="/"> Log In</Link></h4>
+      <h3 color="#4D47C3" className="mt-4">Have an account ?
+        <Link style={{textDecoration: 'none'}} to="/"> Log In</Link></h3>
     </form>
   </div>)
 }
