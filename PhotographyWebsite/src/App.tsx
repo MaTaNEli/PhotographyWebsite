@@ -16,7 +16,6 @@ function App() {
   useEffect(() => {
     (async () => {
       try{
-        console.log(1)
         const res = await mainServer.get('/checkValidated');
 
         if (res.status == 200) {
