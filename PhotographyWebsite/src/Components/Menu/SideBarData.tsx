@@ -4,6 +4,12 @@ import * as AiIcons from 'react-icons/ai'
 
 export const SideBarData = [
   {
+    title: 'Now Playing',
+    path: '/nowPlaying',
+    icon: <AiIcons.AiOutlinePlayCircle/>,
+    className: 'nav-text'
+  },
+  {
     title: 'Home',
     path: '/',
     icon: <AiIcons.AiFillHome/>,
@@ -15,5 +21,12 @@ export const SideBarData = [
     icon: <AiIcons.AiOutlinePlayCircle/>,
     className: 'nav-text'
   },
+  {
+    title: 'UpComing',
+    path: '/upComing',
+    icon: <AiIcons.AiOutlinePlayCircle/>,
+    className: 'nav-text'
+  },
+  
 
 ]

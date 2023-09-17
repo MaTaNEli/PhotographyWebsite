@@ -1,14 +1,13 @@
 import './App.css'
 
 import SideMenu from './Components/Menu/SideMenu';
-import HomePage from './Components/HomePage/HomePage';
 import MovieDetails from './Components/Detailes/MovieDetails';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import TopRated from './Components/TopRated/TopRated';
 import LogIn from './Components/LogIn/LogIn';
 import Register from './Components/Register/Register';
 import { useEffect, useState } from 'react';
 import { mainServer } from './ApiLinks/ApiLink';
+import MoviesList from './Components/MoviesList/MoviesList';
 
 function App() {
   const [verified, setVerified] = useState(false)
@@ -38,8 +37,10 @@ function App() {
         <Routes>
           {verified ? (
             <>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/topRated" element={<TopRated />} />
+              <Route path="/" element={<MoviesList path={'/'} />} />
+              <Route path="/topRated" element={<MoviesList path={'/topRated'}/>} />
+              <Route path="/nowPlaying" element={<MoviesList path={'/nowPlaying'} />} />
+              <Route path="/upComing" element={<MoviesList path={'/upComing'} />} />
               <Route path="/details/:id" element={<MovieDetails />} />
             </>
           ) : (

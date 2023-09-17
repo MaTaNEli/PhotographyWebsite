@@ -1,16 +1,19 @@
 import Card from "../UI/Card";
 import {mainServer} from '../../ApiLinks/ApiLink'
 import {movieInterFace} from "../../Utils/Interface";
-import { useState, useEffect } from "react";
+import { useState, useEffect, PropsWithChildren } from "react";
 
-const TopRated = () => {
+interface Path {
+  path:string
+}
+const GetMovies = (props: PropsWithChildren<Path>) => {
   const [movies, setMovies] = useState(Array<movieInterFace>);
   //const [verified, setVerified] = useState()
 
   useEffect(() => {
     (async () => {
       try{
-        const res = await mainServer.get('/topRated');
+        const res = await mainServer.get(props.path);
 
         if (res.status == 200) {
           setMovies(res.data.results)       
@@ -22,7 +25,7 @@ const TopRated = () => {
         console.log(error)
       }
     })();
-  }, [])
+  }, [props.path])
 
   return ( movies ? 
   <div>
@@ -35,4 +38,4 @@ const TopRated = () => {
   )
 }
 
-export default TopRated;
+export default GetMovies;

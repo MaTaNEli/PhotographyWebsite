@@ -1,35 +1,53 @@
 .concept {
   margin: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   gap: 1rem;
   border-radius: 30px;
   margin-bottom: 1rem;
-  max-width: 750px;
+  text-align: center;
   padding: 5px;
+  background-color: black;
+  display: block;
+  
+}
+.check {
+  align-items: center;
+  background-color: black;
+  max-width: 300px;
+  border-radius: 30px;
+  max-height: 200px;
+  float:right;
+  margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
-  background-color: black;
+  margin-bottom: 100px;
+  
 }
 
-.concept:hover {
-  transform: translateY(-2px);
-  transition: transform 0.2s;
-  box-shadow: 0 2px 30px rgba(234, 78, 240, 0.4);
+.check:hover {
+  transform: scale(1.4);
+  transition: all 300ms ease-in-out;
+  transition-delay: 300ms;
+  z-index: 1000;
 }
 
 .concept img {
-  box-shadow: 0 0 8px 8px white inset;
   border-radius: 25px;
-  object-fit: contain;
+  display: inline-flex;
+  border-radius: 30px;
   padding: 0.5px;
   width: 100%;
   height: 100%;
 }
 
+
+.concept:hover img {
+  box-shadow: 0 0 5px 1px black;
+}
+
 .concept h2 {
+  max-width: 50%;
   margin: flex;
   position: relative;
   text-transform: uppercase;
@@ -41,9 +59,11 @@
 }
 
 .text-overlay {
-  position: relative;
+  
   color: white;
-  font-size: 120%;
+  margin:  auto;
+  font-size: 100%;
   text-align: center;
   width: 90%;
+  max-width: 100%;
 }
