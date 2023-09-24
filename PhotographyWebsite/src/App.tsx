@@ -37,11 +37,12 @@ function App() {
         <Routes>
           {verified ? (
             <>
-              <Route path="/" element={<MoviesList path={'/'} />} />
-              <Route path="/topRated" element={<MoviesList path={'/topRated'}/>} />
-              <Route path="/nowPlaying" element={<MoviesList path={'/nowPlaying'} />} />
-              <Route path="/upComing" element={<MoviesList path={'/upComing'} />} />
-              <Route path="/details/:id" element={<MovieDetails />} />
+              <Route path="/popular" element={<MoviesList path={'/popular'} />} />
+              <Route path="/top_rated" element={<MoviesList path={'/top_rated'}/>} />
+              <Route path="/now_playing" element={<MoviesList path={'/now_playing'} />} />
+              <Route path="/upcoming" element={<MoviesList path={'/upcoming'} />} />
+              <Route path="/details/:id/:sitePath" element={<MovieDetails />} />
+              <Route path="/" element={<MoviesList path={'/popular'} />} />
             </>
           ) : (
             <>
@@ -49,7 +50,6 @@ function App() {
               <Route path="*" element={<LogIn />} />
             </>
           )}
-          
         </Routes>
       </BrowserRouter>
     </div>

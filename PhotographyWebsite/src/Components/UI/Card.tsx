@@ -5,6 +5,8 @@ import './Card.css'
 
 interface Props {
   movie: movieInterFace; 
+  page: number;
+  sitePath:string;
 }
 
 const Card = (props: Props) => {
@@ -17,8 +19,8 @@ const Card = (props: Props) => {
   }, [props.movie]);
 
   return (imageSrc ? 
-    <div className="check">
-      <Link style={{textDecoration: 'none'}} className="concept" to={`/details/${props.movie.id}`}>    
+    <div className="myCard">
+      <Link style={{textDecoration: 'none'}} className="myLink" to={`/details/${props.movie.id}${props.sitePath}`}>    
         <img src={imageSrc} alt="My Image" ></img>
           <h2 className="text-overlay">{props.movie['original_title']}</h2>
           <p className="text-overlay">Release Date: {props.movie['release_date']}</p>   

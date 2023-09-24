@@ -1,4 +1,4 @@
-.root {
+.movieDetails {
   position: relative;
   align-items: center;
   justify-content: center;
@@ -28,15 +28,12 @@ img {
   height: 60px;
 }
 
-.root button {
+.movieDetails button {
   bottom: -100%;
   left: 45%;
   position: absolute;
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50%;
@@ -47,3 +44,24 @@ button:hover {
   background-color: #e20d0d;
   border-color: #e20d0d;
 }
+
+.favorite {
+ 
+  bottom: -90%;
+  left: 46%;
+  position: absolute;
+ 
+  color: rgb(0, 0, 0);
+
+  
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50%;
+ 
+
+  background-color: #18f347;
+
+
+}
+

@@ -1,0 +1,30 @@
+.myScreen {
+  margin-left: 7%;
+  margin-right: 10%; 
+}
+
+.rightButton {
+  position: fixed;
+  bottom: 50%;
+  right: 5px;
+}
+.rightButton:hover {
+  background-color: black;
+}
+
+.leftButton {
+  position: fixed;
+  bottom: 50%;
+}
+
+.leftButton:hover {
+  background-color: black;
+}
+
+.buttonText {
+  position: fixed;
+  bottom: 0;
+  right: 5px;
+  color: white;
+  font-size: 200%;
+}

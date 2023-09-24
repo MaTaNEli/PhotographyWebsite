@@ -1,5 +1,3 @@
-// d
-
 interface prod_companies {
   "id": number,
   "logo_path": string,

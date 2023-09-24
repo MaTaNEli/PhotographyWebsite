@@ -5,25 +5,25 @@ import * as AiIcons from 'react-icons/ai'
 export const SideBarData = [
   {
     title: 'Now Playing',
-    path: '/nowPlaying',
+    path: '/now_playing',
     icon: <AiIcons.AiOutlinePlayCircle/>,
     className: 'nav-text'
   },
   {
     title: 'Home',
-    path: '/',
+    path: '/popular',
     icon: <AiIcons.AiFillHome/>,
     className: 'nav-text'
   },
   {
     title: 'Top Rated Movies',
-    path: '/topRated',
+    path: '/top_rated',
     icon: <AiIcons.AiOutlinePlayCircle/>,
     className: 'nav-text'
   },
   {
     title: 'UpComing',
-    path: '/upComing',
+    path: '/upcoming',
     icon: <AiIcons.AiOutlinePlayCircle/>,
     className: 'nav-text'
   },
