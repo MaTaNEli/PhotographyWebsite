@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { mainServer } from './ApiLinks/ApiLink';
 import MoviesList from './Components/MoviesList/MoviesList';
 
+
 function App() {
   const [verified, setVerified] = useState(false)
   const [userName, setUserName] = useState ('')
@@ -38,9 +39,9 @@ function App() {
           {verified ? (
             <>
               <Route path="/popular" element={<MoviesList path={'/popular'} />} />
-              <Route path="/top_rated" element={<MoviesList path={'/top_rated'}/>} />
-              <Route path="/now_playing" element={<MoviesList path={'/now_playing'} />} />
-              <Route path="/upcoming" element={<MoviesList path={'/upcoming'} />} />
+              <Route path="/topRated" element={<MoviesList path={'/topRated'}/>} />
+              <Route path="/nowPlaying" element={<MoviesList path={'/nowPlaying'} />} />
+              <Route path="/upComing" element={<MoviesList path={'/upComing'} />} />
               <Route path="/details/:id/:sitePath" element={<MovieDetails />} />
               <Route path="/" element={<MoviesList path={'/popular'} />} />
             </>

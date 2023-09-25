@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import '../../Form/Form.css'
 import { LogServer } from "../../ApiLinks/ApiLink";
@@ -33,30 +33,28 @@ const LogIn = () => {
     }
   };
 
-  const inputFields = useMemo(() => (
-    [
-      {
-        type: 'text',
-        placeholder: 'Email',
-        onChange: setEmail
-      },
-      {
-        type: 'text',
-        placeholder: 'Username',
-        onChange: setUsername
-      },
-      {
-        type: 'text',
-        placeholder: 'Full name',
-        onChange: setFullname
-      },
-      {
-        type: 'password',
-        placeholder: 'Password',
-        onChange: setPassword
-      }
-    ] 
-  ),[]);
+  const inputFields = [
+    {
+      type: 'text',
+      placeholder: 'Email',
+      onChange: setEmail
+    },
+    {
+      type: 'text',
+      placeholder: 'Username',
+      onChange: setUsername
+    },
+    {
+      type: 'text',
+      placeholder: 'Full name',
+      onChange: setFullname
+    },
+    {
+      type: 'password',
+      placeholder: 'Password',
+      onChange: setPassword
+    }
+  ];
 
   return (<div>
     <div  className="navbar"> 

@@ -13,15 +13,14 @@
 .myCard {
   align-items: center;
   background-color: black;
-  max-width: 300px;
+  max-width: 200px;
   border-radius: 30px;
   max-height: 200px;
   float:right;
   margin-top: 1rem;
-  margin-left: auto;
+  margin-left: 5px;
   margin-right: auto;
-  margin-bottom: 100px;
-  
+  margin-bottom: 12rem;
 }
 
 .myCard:hover {
@@ -46,7 +45,7 @@
 }
 
 .myLink h2 {
-  max-width: 50%;
+  max-width: 100%;
   margin: flex;
   position: relative;
   text-transform: uppercase;
