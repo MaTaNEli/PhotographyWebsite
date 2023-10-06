@@ -1,7 +1,7 @@
 import './App.css'
 
 import SideMenu from './Components/Menu/SideMenu';
-import MovieDetails from './Components/Detailes/MovieDetails';
+import MovieDetails from './Components/Detailes/InfoDetails';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import LogIn from './Components/LogIn/LogIn';
 import Register from './Components/Register/Register';
@@ -39,10 +39,15 @@ function App() {
           {verified ? (
             <>
               <Route path="/popular" element={<MoviesList path={'/popular'} />} />
+              <Route path="/tvShow/popular" element={<MoviesList path={'/tvShow/popular'} />} />
+              <Route path="/tvShow/on_the_air" element={<MoviesList path={'/tvShow/on_the_air'} />} />
+              <Route path="/tvShow/topRated" element={<MoviesList path={'/tvShow/topRated'} />} />
+              <Route path="/tvShow/airing_today" element={<MoviesList path={'/tvShow/airing_today'} />} />
               <Route path="/topRated" element={<MoviesList path={'/topRated'}/>} />
               <Route path="/nowPlaying" element={<MoviesList path={'/nowPlaying'} />} />
               <Route path="/upComing" element={<MoviesList path={'/upComing'} />} />
-              <Route path="/details/:id/:sitePath" element={<MovieDetails />} />
+              <Route path="/details/:id/:sitePath/:tvPath?" element={<MovieDetails />} />
+              <Route path="/tvShow/" element={<MoviesList path={'/tvShow/popular'} />} />
               <Route path="/" element={<MoviesList path={'/popular'} />} />
             </>
           ) : (

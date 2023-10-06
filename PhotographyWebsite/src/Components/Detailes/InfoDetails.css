@@ -1,4 +1,4 @@
-.movieDetails {
+.infoDetails {
   position: relative;
   align-items: center;
   justify-content: center;
@@ -28,7 +28,7 @@ img {
   height: 60px;
 }
 
-.movieDetails button {
+.infoDetails button {
   bottom: -100%;
   left: 45%;
   position: absolute;

@@ -47,3 +47,23 @@ export interface movieInterFace {
   "vote_average": number,
   "vote_count": number
 }
+
+export interface TvShow {
+  "backdrop_path": string,
+  "genre_ids": number[],
+  "id": number,
+  "name": string,
+  "origin_country": string[],
+  "original_language": string,
+  "original_name": string,
+  "overview": string,
+  "popularity": number,
+  "poster_path": string,
+  "first_air_date": string,
+  "vote_average": number,
+  "vote_count": number,
+  "popular": boolean,
+  "on_the_air": boolean,
+  "topRated": boolean,
+  "airing_today": boolean,
+}

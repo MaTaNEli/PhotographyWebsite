@@ -23,7 +23,7 @@ const LogIn = () => {
       const response = await LogServer.post('/login', user);
 
       if (response.status == 200)
-      window.location.reload();
+        window.location.reload();
       
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -38,20 +38,18 @@ const LogIn = () => {
     }
   };
 
-  const inputFields = useMemo(() => (
-    [
-      {
-        type: 'text',
-        placeholder: 'Email or username',
-        onChange: setUsername
-      },
-      {
-        type: 'password',
-        placeholder: 'Password',
-        onChange: setPassword
-      }
-    ]
-  ),[]);
+  const inputFields = useMemo(() => ([
+    {
+      type: 'text',
+      placeholder: 'Email or username',
+      onChange: setUsername
+    },
+    {
+      type: 'password',
+      placeholder: 'Password',
+      onChange: setPassword
+    }
+  ]),[]);
   
   return (<div>
     <div  className="navbar"> 

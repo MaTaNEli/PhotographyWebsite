@@ -1,10 +1,11 @@
 import './SideMenu.css';
 import { PropsWithChildren, useState } from "react";
+import { SideBarMoviesData, SideBarTvShowData } from "./SideBarData";
 import * as AiIcons from 'react-icons/ai';
 import * as FaIcons from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import { Link } from "react-router-dom";
-import { SideBarData } from "./SideBarData";
+import Menu from './Menu';
 
 interface User {
   userName:string
@@ -35,16 +36,9 @@ const SideMenu = ((props : PropsWithChildren<User>) => {
                 <Link to='#' className="menu-bars">
                   <AiIcons.AiOutlineClose />
                 </Link>
-              </li> {SideBarData.map((item, index) => {
-                return (
-                  <li key={index} className={item.className}>
-                    <Link to={item.path}>
-                      {item.icon}
-                      <span>{item.title}</span>
-                    </Link>
-                  </li>
-                )
-              })}
+              </li> 
+              <Menu list={SideBarMoviesData} title='Movies'/>
+              <Menu list={SideBarTvShowData} title='TV Shows'/>
             </ul>
           </nav>
         </div>
