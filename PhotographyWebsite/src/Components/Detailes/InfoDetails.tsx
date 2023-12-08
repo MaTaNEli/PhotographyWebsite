@@ -1,4 +1,4 @@
-import {mainServer} from '../../ApiLinks/ApiLink'
+import {mainServer} from '../../ApiLinks/ApiLink';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './InfoDetails.css'

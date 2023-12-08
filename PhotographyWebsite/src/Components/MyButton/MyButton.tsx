@@ -13,4 +13,4 @@ const MyButton = memo ((props:PropsWithChildren<MyButtonProps>) => {
   );
 });
 
-export default (MyButton); 
+export default MyButton; 

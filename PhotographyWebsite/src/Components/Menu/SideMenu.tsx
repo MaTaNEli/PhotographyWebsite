@@ -4,18 +4,30 @@ import { SideBarMoviesData, SideBarTvShowData } from "./SideBarData";
 import * as AiIcons from 'react-icons/ai';
 import * as FaIcons from 'react-icons/fa';
 import { IconContext } from 'react-icons';
+
 import { Link } from "react-router-dom";
 import Menu from './Menu';
+import { mainServer } from '../../ApiLinks/ApiLink';
 
 interface User {
   userName:string
 }
 const SideMenu = ((props : PropsWithChildren<User>) => {
+
   const [sideBarShow, setSideBarShow] = useState(false);
 
   const handleMouseEnter = () => setSideBarShow(!sideBarShow);
-
   const closeBar = () => sideBarShow ? setSideBarShow(!sideBarShow) : null
+
+  const SignOut = async () => {
+    try{
+      const res = await mainServer.get(`/signOut`);
+      if (res.status == 200) location.reload();
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <>
@@ -26,6 +38,8 @@ const SideMenu = ((props : PropsWithChildren<User>) => {
             </Link>
             <h1>What To Watch?</h1>
             <h3>Hello {props.userName}</h3>
+            <button className='btn' onClick={SignOut}>Log Out</button>
+
         </div>  
 
         <div  className="drop_down"> 
@@ -42,7 +56,6 @@ const SideMenu = ((props : PropsWithChildren<User>) => {
             </ul>
           </nav>
         </div>
-        
       </IconContext.Provider>
     </>
   )
