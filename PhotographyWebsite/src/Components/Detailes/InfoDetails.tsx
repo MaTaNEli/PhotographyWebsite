@@ -24,7 +24,7 @@ const InfoDetails = () => {
     })();
   }, [id, genre])
 
-  return info && sitePath ? genre == 'tvShow' ? 
+  return info && sitePath ? genre == 'Movies' ? 
     <MovieDetails movie={info} sitePath={sitePath} /> : 
     <TvShowDetails show={info} sitePath={sitePath} />
     : null

@@ -8,6 +8,7 @@ interface Props {
 }
 
 const TvShowCard = (props: Props) => {
+
   const imageSrc = props.show.poster_path ? import.meta.env.VITE_APP_IMG + props.show.poster_path : ""
   return (imageSrc ? 
     <div className="myCard">

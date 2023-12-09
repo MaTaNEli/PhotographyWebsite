@@ -1,13 +1,13 @@
 import './App.css'
 
 import SideMenu from './Components/Menu/SideMenu';
-import MovieDetails from './Components/Detailes/InfoDetails';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import LogIn from './Components/LogIn/LogIn';
 import Register from './Components/Register/Register';
 import { useEffect, useState } from 'react';
 import { mainServer } from './ApiLinks/ApiLink';
 import MoviesList from './Components/MoviesList/MoviesList';
+import InfoDetails from './Components/Detailes/InfoDetails';
 
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
               <Route path="/topRated" element={<MoviesList path={'/topRated'}/>} />
               <Route path="/nowPlaying" element={<MoviesList path={'/nowPlaying'} />} />
               <Route path="/upComing" element={<MoviesList path={'/upComing'} />} />
-              <Route path="/details/:id/:sitePath/:tvPath?" element={<MovieDetails />} />
+              <Route path="/details/:id/:sitePath/:tvPath?" element={<InfoDetails />} />
               <Route path="/tvShow/" element={<MoviesList path={'/tvShow/popular'} />} />
               <Route path="/" element={<MoviesList path={'/popular'} />} />
             </>
