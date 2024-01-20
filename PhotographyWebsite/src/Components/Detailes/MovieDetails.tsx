@@ -20,8 +20,9 @@ const MovieDetails = (props: Props) => {
         <h2 className="text">{props.movie.original_title}</h2>
         <img src={image} alt="" ></img>
         <h4 className="text">{props.movie.overview}</h4>
+        <button className="favorite">Add to favorite</button>
         <br />
-        <button onClick={goBack}>Return Home</button>
+        <button className='return' onClick={goBack}>Return Home</button>
       </div>
     </div>
   )

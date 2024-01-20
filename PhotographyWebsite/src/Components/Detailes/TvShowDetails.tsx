@@ -20,8 +20,9 @@ const TvShowDetails = (props: Props) => {
         <h2 className="text">{props.show.name}</h2>
         <img src={image} alt="" ></img>
         <h4 className="text">{props.show.overview}</h4>
+        <button className="favorite">Add to favorite</button>
         <br />
-        <button onClick={goBack}>Return Home</button>
+        <button className='return' onClick={goBack}>Return Home</button>
       </div>
     </div>
   )

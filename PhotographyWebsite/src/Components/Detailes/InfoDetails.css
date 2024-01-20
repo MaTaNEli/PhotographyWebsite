@@ -27,8 +27,24 @@ img {
   padding: 8px 0px 8px 16px;
   height: 60px;
 }
+.favorite {
+  bottom: -90%;
+  left: 44%;
+  position: absolute;
+  background-color: rgb(124, 202, 34);
+  color: rgb(0, 0, 0);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50%;
+  padding: 0.5rem;
+}
 
-.infoDetails button {
+.favorite:hover {
+  background-color: #e20d0d;
+  border-color: #e20d0d;
+}
+
+.return  {
   bottom: -100%;
   left: 45%;
   position: absolute;
@@ -40,29 +56,12 @@ img {
   padding: 0.5rem;
 }
 
-button:hover {
+.return:hover {
   background-color: #e20d0d;
   border-color: #e20d0d;
 }
 
-.favorite {
-  
- 
-  bottom: -80%;
-  left: 46%;
-  position: absolute;
- 
-  color: rgb(0, 0, 0);
-
-  
-
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50%;
- 
-
-  background-color: #18f347;
 
 
-}
+
 
